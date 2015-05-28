@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0" charset="UTF-8">
+    <title>Android不支持伪类animation</title>
+    <link rel="stylesheet" href="../css/style.css">
+<style>
+.progress_bar_1,.progress_bar_2{
+    width: 80%;
+    height: 20px;
+    margin: 20px auto;
+    border-radius: 3px;
+    background-color: #eee;
+}
+.progress_bar_1 .length,.progress_bar_2 .length{
+    height: 100%;
+}
+.progress_bar_1 .length:before,.progress_bar_2 .length span{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    background-color: #ff7200;
+    background-image: -webkit-linear-gradient(left, #ff7200, #ffd200);
+    -webkit-animation:progress 1s ease-out;
+    animation:progress 1s ease-out;
+}
+@-webkit-keyframes progress{
+    0%{
+        width:0;
+    }
+    100%{
+        width:100%;
+    }
+}
+@keyframes progress{
+    0%{
+        width:0;
+    }
+    100%{
+        width:100%;
+    }
+}
+</style>
+</head>
+<body>
+<h1>Android不支持伪类animation</h1>
+<ul class="info">
+    <li>魅族MX2 Android 4.4.4（UC、QQ）</li>
+</ul>
+<h2>bug：</h2>
+<div class="progress_bar_1">
+    <div class="length" style="width:70%"></div>
+</div>
+<h2>解决办法：不用伪类用空标签</h2>
+<div class="progress_bar_2">
+    <div class="length" style="width:70%">
+        <span></span>
+    </div>
+</div>
+</body>
+</html>

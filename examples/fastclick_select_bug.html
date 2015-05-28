@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0" charset="UTF-8">
+    <title>引用fastclick，select等标签失效</title>
+    <link rel="stylesheet" href="../css/style.css">
+<style>
+.box{
+    margin: 20px;
+}
+.box .text{
+    -webkit-appearance: none;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #ccc;
+}
+.checkbox{
+    -webkit-appearance: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #e6e6e6;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+}
+.checkbox:checked {
+    border-color: #8ab746;
+    background-color: #8ab746;
+}
+.checkbox:checked:after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 4px;
+  width: 11px;
+  height: 5px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+</style>
+<script src="http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+<script>
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+</script>
+</head>
+<body>
+<h1>引用fastclick，select等标签失效</h1>
+<ul class="info">
+    <li>未确认</li>
+</ul>
+<h2>bug：</h2>
+<div class="box">
+    <select>
+        <option>星期一</option>
+        <option>星期二</option>
+        <option>星期三</option>
+        <option>星期四</option>
+        <option>星期五</option>
+        <option>星期六</option>
+        <option>星期日</option>
+    </select>
+</div>
+<h2>解决办法：失效标签加needsclick类</h2>
+<div class="box">
+    <select class="needsclick">
+        <option>星期一</option>
+        <option>星期二</option>
+        <option>星期三</option>
+        <option>星期四</option>
+        <option>星期五</option>
+        <option>星期六</option>
+        <option>星期日</option>
+    </select>
+</div>
+<div class="box">
+    <input type="text" class="text" placeholder="请输入备注" disabled>
+</div>
+<div class="box">
+    <input type="checkbox" class="checkbox">
+</div>
+</body>
+</html>

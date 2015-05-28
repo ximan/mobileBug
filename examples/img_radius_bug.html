@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0" charset="UTF-8">
+    <title>Android里img标签加圆角边框包不住图片</title>
+    <link rel="stylesheet" href="../css/style.css">
+<style>
+.box{
+    margin: 20px auto;
+}
+.box_1 img,.box_2 .radius{
+    width: 100px;
+    height: 100px;
+    border: 5px solid #f00;
+    border-radius: 50%;
+}
+.box_2 .radius img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+</style>
+</head>
+<body>
+<h1>Android里img标签加圆角边框包不住图片</h1>
+<ul class="info">
+    <li>魅族MX2 Android 4.4.4（UC、QQ）</li>
+</ul>
+<h2>bug：</h2>
+<div class="box box_1">
+    <img src="http://d9.yihaodianimg.com/N05/M06/F8/22/CgQI01U913SAAjkKAAOa_s2h_yo32700_200x200.jpg">
+</div>
+<h2>解决办法：img外面嵌套div加边框，不在img上加边框</h2>
+<div class="box box_2">
+    <div class="radius">
+        <img src="http://d9.yihaodianimg.com/N05/M06/F8/22/CgQI01U913SAAjkKAAOa_s2h_yo32700_200x200.jpg">
+    </div>
+</div>
+</body>
+</html>

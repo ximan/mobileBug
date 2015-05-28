@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0" charset="UTF-8">
+    <title>Android里flex元素不加宽度容易被撑开而不是等分</title>
+    <link rel="stylesheet" href="../css/style.css">
+<style>
+.box{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 10px 0;
+    background-color: #eee;
+}
+.box .item{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    line-height: 20px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+.box_2 .item{
+    width: 100%;
+}
+</style>
+</head>
+<body>
+<h1>Android里flex元素不加宽度容易被撑开而不是等分</h1>
+<ul class="info">
+    <li>魅族MX2 Android 4.4.4（UC、QQ）</li>
+</ul>
+<h2>bug：</h2>
+<div class="box">
+    <div class="item">测试文字测试文字测试文字测试文字测试文字</div>
+    <div class="item">测试文字</div>
+</div>
+<h2>解决办法：flex项加宽度，例如width:100%</h2>
+<div class="box box_2">
+    <div class="item">测试文字测试文字测试文字测试文字测试文字</div>
+    <div class="item">测试文字</div>
+</div>
+</body>
+</html>

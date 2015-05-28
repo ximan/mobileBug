@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0" charset="UTF-8">
+    <title>Android里flexbox布局左右按钮，不能用inline-block</title>
+    <link rel="stylesheet" href="../css/style.css">
+<style>
+.box{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack:justify;
+    -webkit-box-pack:justify;
+    box-pack:justify;
+    -webkit-justify-content:space-between;
+    justify-content:space-between;
+    margin: 10px auto;
+    width: 200px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+.box .btn{
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #06c;
+}
+.box_2 .btn{
+    display: block;
+}
+</style>
+</head>
+<body>
+<h1>Android里flexbox布局左右按钮，不能用inline-block</h1>
+<ul class="info">
+    <li>魅族MX2 Android 4.4.4（UC、QQ）</li>
+</ul>
+<h2>bug：</h2>
+<div class="box">
+    <a class="btn">确认</a>
+    <a class="btn">确认</a>
+</div>
+<h2>解决办法：用block</h2>
+<div class="box box_2">
+    <a class="btn">确认</a>
+    <a class="btn">确认</a>
+</div>
+</body>
+</html>
