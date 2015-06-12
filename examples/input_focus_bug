@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>localstorage</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="minimal-ui=yes,width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="Keywords" content="localstorage">
+    <meta name="Description" content="localstorage">
+    <link data-lsid="css_homepage" rel="stylesheet" href="http://image.yihaodianimg.com/front-homepage/mobile/css/homepage/homepage.css"/>
+    <style>
+        html{font-size:62.5%;}
+        *{margin:0;padding:0;list-style:none;}
+        .wrap{position: relative;height:100%;}
+        input{border:1px solid #ddd;height:50px;}
+        button{position: absolute;bottom:10px;left:50%;background:#ff3c3c;-webkit-appearance: none;width:60px;height:60px;border-radius:50%;border:0;color:#fff;font-size:14px;}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <input type="text"/>
+    <h3>问题机型：</h3>
+    <p>Ipad2</p>
+    <h3>现象：</h3>
+    <p>input聚焦时，底部absolute定位的按钮会被弹起的键盘顶上去，input失去焦点时，底部按钮却没有及时回到底部。</p>
+    <h3>解决方案：</h3>
+    <p>input绑定blur事件，触发scroll事件：window.scroll(0,0)</p>
+    <h3>解决结果：</h3>
+    <p>已解决</p>
+    <button>+</button>
+</div>
+<script>
+    var input = document.querySelector('input');
+    input.onblur = function(){
+        window.scrollTo(0,0);
+    }
+</script>
+</body>
+</html>
