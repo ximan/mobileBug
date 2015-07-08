@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0" charset="UTF-8">
+    <title>X5内核，手指滑到屏幕外（上方）无法触发touchend</title>
+    <link rel="stylesheet" href="../css/style.css">
+<style>
+.box{
+    position: relative;
+    height: 200px;
+    background-color: red;
+    color: white;
+}
+.box .num{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+</style>
+</head>
+<body>
+<h1>X5内核，手指滑到屏幕外（上方）无法触发touchend，再次滑动，才触发touchend</h1>
+<ul class="info">
+    <li>iPhone 5s iOS8.4（微信、QQ）</li>
+</ul>
+<h2>bug：</h2>
+<div class="box">
+    从红色区域往上滑动，滑到屏幕上方，不触发touchend。再次滑动，才触发touchend
+    <span class="num"></span>
+</div>
+<h2>解决办法：未知</h2>
+
+
+<script src="../js/zepto.min.js"></script>
+<script>
+$(function(){
+    var $box = $('.box');
+    var $num = $('.num');
+    $box.on('touchstart',function(){
+        console.log('touchstart');
+    });
+    $box.on('touchmove',function(e){
+        e.preventDefault();
+        console.log('touchmove');
+        $num.text('x:'+e.touches[0].pageX+' y:'+e.touches[0].pageY);
+    });
+    $box.on('touchend',function(){
+        console.log('touchend');
+        alert('touchend');
+    });
+});
+
+</script>
+</body>
+</html>
