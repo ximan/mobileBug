@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0" charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/style.css">
+<style>
+.box{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.box .pic{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    background-color: #f00;
+}
+.box .info{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    line-height: 20px;
+    font-size: 14px;
+}
+.box .btn{
+    line-height: 20px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #f00;
+    text-decoration: none;
+}
+
+.box_1 .btn{
+    float: right;
+}
+.box_2 .btn{
+    display: block;
+}
+</style>
+</head>
+<body>
+<h1>flexbox伸缩项目不能使用浮动，Android浮动部分会消失</h1>
+<ul class="info">
+    <li>魅族MX2 Android 4.4.4（UC、自带）</li>
+</ul>
+<h2>bug：</h2>
+<div class="box box_1">
+    <div class="info">文字文字文字文字文字文字</div>
+    <a href="#" class="btn">按钮</a>
+</div>
+<h2>解决办法：flexbox伸缩项目去掉浮动</h2>
+<div class="box box_2">
+    <div class="info">文字文字文字文字文字文字</div>
+    <a href="#" class="btn">按钮</a>
+</div>
+</body>
+</html>
