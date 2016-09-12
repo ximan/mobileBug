@@ -5,14 +5,19 @@
 }
 h1{
     line-height: 20px;
-    padding: 10px 0;
+    margin: 10px;
     font-size: 16px;
 }
 h2{
     line-height: 20px;
+    margin: 0 10px;
     font-size: 14px;
 }
-.info li{
+ul.info{
+    margin: 10px 10px 10px 30px;
+}
+ul.info li{
     line-height: 20px;
+    margin-bottom: 10px;
     font-size: 14px;
 }
