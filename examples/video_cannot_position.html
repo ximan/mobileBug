@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0" charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/style.css">
+<style>
+.video_wrap{
+    position: relative;
+    background-color: #eee;
+}
+.video_wrap:after{
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+.video_box{
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+}
+.video_box:after{
+    content: '';
+    display: block;
+    padding-top: 56.26911315%;
+}
+.video1{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.box{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+.video{
+    width: 100%;
+    height: 100%;
+}
+.video2{
+    width: 100%;
+    height: 100%;
+}
+</style>
+</head>
+<body>
+<h1>video在iPhone QQ浏览器里，特定情况自适应会出现bug。video_wrap为正方形，QQ浏览器里有问题</h1>
+<ul class="info">
+    <li>iPhone6s iOS9.3.4（QQ浏览器）</li>
+</ul>
+<h2>bug：</h2>
+<div class="video_wrap">
+    <div class="video_box">
+        <video class="video1" preload="none" src="http://v1.yihaodianimg.com/V00/M00/72/CC/CgQDsVbX-I-APG9kAFDsbJaVCkI016.mp4" poster="http://d7.yihaodianimg.com/N10/M0B/81/DD/ChEi21fPpyGAPcd0AABpqih3CeA36100.jpg"></video>
+    </div>
+</div>
+<h2>解决办法：</h2>
+<div class="video_wrap">
+    <div class="video_box">
+        <div class="box">
+            <div class="video">
+                <video class="video2" preload="none" src="http://v1.yihaodianimg.com/V00/M00/72/CC/CgQDsVbX-I-APG9kAFDsbJaVCkI016.mp4" poster="http://d7.yihaodianimg.com/N10/M0B/81/DD/ChEi21fPpyGAPcd0AABpqih3CeA36100.jpg"></video>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
